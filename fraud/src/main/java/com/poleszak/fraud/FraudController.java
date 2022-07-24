@@ -1,8 +1,8 @@
 package com.poleszak.fraud;
 
+import com.poleszak.clients.fraud.FraudCheckResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +17,10 @@ public class FraudController {
     private final FraudCheckService fraudCheckService;
 
     @GetMapping(path = "{customerId}")
-    public ResponseEntity<FraudCheckResponse> isFraudster(@PathVariable("customerId") Integer customerId) {
+    public FraudCheckResponse isFraudster(@PathVariable("customerId") Integer customerId) {
         var isFraudulentCustomer = fraudCheckService.isFraudulentCustomer(customerId);
         log.info("Fraud check request for customer {}", customerId);
 
-        return ResponseEntity.ok(new FraudCheckResponse(isFraudulentCustomer));
+        return new FraudCheckResponse(isFraudulentCustomer);
     }
 }

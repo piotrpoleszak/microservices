@@ -1,6 +1,6 @@
-Feature: Test check
-
-  Scenario: Add customer
-    Given Data
-    When Add customer
-    Then Customer is added
+#Feature: Should add customer
+#
+#  Scenario: Add customer
+#    Given aaa
+#    When abc
+#    Then bbb

@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: customer
+  name: notification
   labels:
-    app: customer
+    app: notification
 spec:
   replicas: 1
   template:
     metadata:
-      name: customer
+      name: notification
       labels:
-        app: customer
+        app: notification
     spec:
       containers:
-        - name: customer
-          image: poleszak/customer:latest
+        - name: notification
+          image: poleszak/notification:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8082
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: kube
       restartPolicy: Always
   selector:
     matchLabels:
-      app: customer
+      app: notification

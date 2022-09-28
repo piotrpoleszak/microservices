@@ -15,9 +15,9 @@ import org.springframework.context.annotation.PropertySources;
 )
 @EnableEurekaClient
 @EnableFeignClients(basePackages = "com.poleszak.clients")
-@PropertySources({
-        @PropertySource("classpath:clients-${spring.profiles.active}.properties")
-})
+//@PropertySources({
+//        @PropertySource("classpath:clients-${spring.profiles.active}.properties")
+//})
 public class CustomerApplication {
     public static void main(String[] args) {
         SpringApplication.run(CustomerApplication.class, args);

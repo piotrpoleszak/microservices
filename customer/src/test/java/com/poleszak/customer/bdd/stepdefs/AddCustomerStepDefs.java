@@ -25,10 +25,13 @@ public class AddCustomerStepDefs extends TestBase {
         System.out.println("aaaaaaa");
     }
 
-    @When("abc")
-    public void addCustomer() throws Exception {
-        System.out.println("aaaaaaa");
-    }
+//    @When("abc")
+//    public void addCustomer() throws Exception {
+//        mvc.perform(get("api/v1/customers")
+//                .accept(APPLICATION_JSON)
+//                .contentType(APPLICATION_JSON)
+//                .content());
+//    }
 
     @Then("bbb")
     public void customerShouldBeAdded() throws Exception {
